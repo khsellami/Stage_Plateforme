@@ -1,0 +1,255 @@
+/* General resets and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styles pour la barre de navigation */
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Logo de la navbar */
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    color: #e74c3c; /* Couleur rouge pour "Job" */
+  }
+  
+  /* Styles pour les liens dans la navbar */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Espace entre les éléments */
+  }
+  
+  /* Style des liens */
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Effet au survol des liens */
+  .nav-links li a:hover {
+    color: #e74c3c; /* Change la couleur au survol */
+  }
+  
+  /* Styles pour le bouton de navigation mobile */
+  .navbar-toggler {
+    border: none;
+    background: none;
+  }
+  
+  /* Styles pour le bouton Logout */
+#logout {
+    padding: 6px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #dc3545; /* Couleur rouge pour le bouton Logout */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet au survol du bouton Logout */
+  #logout:hover {
+    background-color: #c82333; /* Couleur rouge plus foncée au survol */
+  }
+  /* Main content section */
+  .main {
+    display: flex;
+    height: calc(100vh - 60px);
+  }
+  
+  /* Sidebar Styles */
+.sidebar {
+    width: 200px; /* Un peu plus large pour mieux contenir les éléments */
+    background-color: white; /* Couleur de fond de la sidebar */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espace entre les éléments */
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin: 15px 0; /* Espace entre les éléments de la liste */
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #333; /* Couleur des liens */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  /* Effet hover pour les liens */
+  .sidebar a:hover {
+    color: #e74c3c; /* Couleur rouge au survol */
+  }
+  
+  /* Styles des boutons dans la sidebar */
+  .sidebar .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Bouton primaire dans la sidebar */
+  .sidebar .btn-primary {
+    background-color: #e74c3c; /* Bleu pour bouton primaire */
+    color: white;
+  }
+  
+  /* Effet hover pour le bouton primaire */
+  .sidebar .btn-primary:hover {
+    background-color: #e74c3c; /* Bleu plus foncé au survol */
+  }
+  
+  /* Bouton secondaire dans la sidebar */
+  .sidebar .btn-secondary {
+    background-color: #28a745; /* Vert pour bouton secondaire */
+    color: white;
+  }
+  
+  /* Effet hover pour le bouton secondaire */
+  .sidebar .btn-secondary:hover {
+    background-color: #218838; /* Vert plus foncé au survol */
+  }
+  
+  
+
+  /* Content Section Styles */
+  .content {
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+    background-color: #f7f9fc; /* Fond léger pour la section content */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre pour ajouter du relief */
+  }
+  
+  h1, h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Small adjustments to the sidebar links for clarity */
+  .sidebar a {
+    color: #333;
+  }
+  
+  .sidebar a:hover {
+    color: #e74c3c; /* Accent couleur pour les liens */
+  }
+  
+  
+  /* Job cards styling */
+  .job-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .job-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .job-title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .job-meta {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .labels {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .label {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .full-time { background-color: #ff4d4f; }
+  .part-time { background-color: #1890ff; }
+  .internship { background-color: #ffc107; color: black; }
+  .urgent { background-color: #ff7a45; }
+  .featured { background-color: #52c41a; }
+  
+  .job-salary {
+    font-weight: 500;
+    color: #444;
+    margin-top: 5px;
+  }
+  
+  /* Chart section tweaks */
+  .chart-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  #jobChart {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px;
+  }
+  
+  .accepted {
+    background-color: #52c41a;
+  }
+  
+  .rejected {
+    background-color: #ff4d4f;
+  }
+  
+  .under-review {
+    background-color: #faad14;
+    color: black;
+  }
+  

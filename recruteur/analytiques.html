@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytiques</title>
+  <link rel="stylesheet" href="analytiques.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Espace <span>Recruteur</span></div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Tableau de bord</a></li>
+          <li><a href="offres.html">Gestion des offres</a></li>
+          <li><a href="index.html">CV filtrés</a></li>
+          <li><a href="planning.html">Planning des entretiens</a></li>
+          <li><a class="active" href="analytiques.html">Analytiques</a></li>
+          <li><a href="parametres.html">Paramètres</a></li>
+          <li><a href="messages.html">Messages <span class="badge">3</span></a></li>
+        </ul>
+      </nav>
+      <button class="logout">Déconnexion</button>
+    </aside>
+
+    <main class="main-content">
+      <h1>Analytiques</h1>
+
+      <section class="cards">
+        <div class="chart-card">
+          <h3>Temps moyen de recrutement</h3>
+          <canvas id="recruitmentTimeChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Sources de candidats</h3>
+          <canvas id="candidateSourcesChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h3>Compétences recherchées</h3>
+          <canvas id="skillsChart"></canvas>
+        </div>
+      </section>
+
+      <button id="exportBtn" class="export-btn">Exporter les données (PDF / Excel)</button>
+    </main>
+  </div>
+
+  <script src="analytiques.js"></script>
+</body>
+</html>

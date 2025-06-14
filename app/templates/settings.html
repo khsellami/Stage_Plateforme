@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <div class="logo-content">
+                    <h2>Dashboard</h2>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('candidature') }}"><i class="fas fa-file-alt"></i><span>Candidature</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-user-tie"></i><span>CV</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-briefcase"></i><span>Offres</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+<!-- Navbar -->
+<header class="navbar">
+    <div class="page-title">
+        <h2>Dashboard</h2>
+    </div>
+    <div class="user-wrapper">
+        <!-- Dark/Light Mode Toggle -->
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="icon-button">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+        
+        <!-- Notifications -->
+        <div class="notifications-dropdown">
+            <button class="icon-button">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="dropdown-content">
+                <div class="dropdown-header">
+                    <h4>Notifications</h4>
+                </div>
+                <a href="#"><i class="fas fa-envelope"></i> New message received</a>
+                <a href="#"><i class="fas fa-briefcase"></i> New job offer available</a>
+                <a href="#"><i class="fas fa-calendar"></i> Interview scheduled</a>
+            </div>
+        </div>
+        
+        <!-- Settings -->
+        <div class="settings-dropdown">
+            <button class="icon-button">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('settings') }}"><i class="fas fa-user-cog"></i> Account Settings</a>
+                <a href="#"><i class="fas fa-sliders-h"></i> Preferences</a>
+                <a href="#"><i class="fas fa-palette"></i> Appearance</a>
+            </div>
+        </div>
+        
+        <!-- Profile -->
+        <div class="profile-dropdown">
+            <div class="profile-info">
+                <img src="../images/img.png" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="dropdown-content">
+                <div class="dropdown-header">
+                    <h4>John Doe</h4>
+                    <small>Software Developer</small>
+                </div>
+                <a href="{{ url_for('profil') }}"><i class="fas fa-user"></i> View Profile</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="settings-section">
+    <h2>Account Settings</h2>
+    <form id="settingsForm">
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter your username">
+      </div>
+      
+      <div class="form-group">
+          <label for="fname">First name</label>
+          <input type="text" id="fname" placeholder="Enter your first name">
+      </div>
+        
+      <div class="form-group">
+          <label for="lname">Last name</label>
+          <input type="text" id="lname" placeholder="Enter your last name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter new password">
+      </div>
+
+      <div class="form-group">
+        <label for="privacy">Privacy Settings</label>
+        <select id="privacy">
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Notifications</label>
+        <input type="checkbox" id="notifications"> Enable Notifications
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="profilePicture">Profile Picture</label>
+        <input type="file" id="profilePicture" accept="image/*">
+        <div id="avatarPreview" class="avatar-preview"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="linkedin">LinkedIn</label>
+        <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+      </div>
+
+      <div class="form-group">
+        <label for="github">GitHub</label>
+        <input type="url" id="github" placeholder="https://github.com/yourprofile">
+      </div>
+
+      <button type="submit" class="save-btn">Save Changes</button>
+      <button type="button" id="logoutBtn" class="logout-btn">Logout</button>
+
+    </form>
+  </section>
+
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+</body>
+</html>

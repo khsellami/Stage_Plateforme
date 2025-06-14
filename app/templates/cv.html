@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du CV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cv.css') }}">
+   <script defer src="{{ url_for('static', filename='js/cv.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <h2>Dashboard</h2>
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li class="active">
+                    <a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                </li>
+                <li><a href="{{ url_for('candidature') }}"><i class="fas fa-file-alt"></i><span>Candidature</span></a></li>
+                <li><a href="#"><i class="fas fa-user-tie"></i><span>CV</span></a></li>
+                <li><a href="#"><i class="fas fa-briefcase"></i><span>Offres</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="navbar">
+            <h2>Gestion du CV</h2>
+            <div class="user-wrapper">
+                <img src="{{ url_for('static', filename='images/img.png') }}" alt="Profil" class="profile-pic">
+            </div>
+        </header>
+
+        <section class="cv-section">
+            <h3>Créer / Modifier votre CV</h3>
+            <form id="cvForm">
+                <fieldset>
+                    <legend>Informations Personnelles</legend>
+                    <input type="text" name="fullName" placeholder="Nom complet" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Téléphone" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Formation</legend>
+                    <textarea name="education" placeholder="Décrivez votre parcours académique..." required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Expériences Professionnelles</legend>
+                    <textarea name="experience" placeholder="Décrivez vos expériences..." required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Compétences</legend>
+                    <input type="text" name="skills" placeholder="Ajouter vos compétences principales" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Projets</legend>
+                    <textarea name="projects" placeholder="Décrivez vos projets marquants..." required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Certifications</legend>
+                    <textarea name="certifications" placeholder="Listez vos certifications..." required></textarea>
+                </fieldset>
+
+                <div class="file-upload">
+                    <label for="cvUpload" class="upload-btn">
+                        <i class="fas fa-upload"></i> Importer un CV existant
+                    </label>
+                    <input type="file" id="cvUpload" accept=".pdf,.doc,.docx">
+                </div>
+
+                <div class="preview">
+                    <h4>Prévisualisation</h4>
+                    <div id="previewArea">
+                        <p>Aucune information saisie pour l'instant...</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="suggestBtn">Suggestions</button>
+                    <button type="submit">Enregistrer</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>

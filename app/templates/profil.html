@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profil.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <div class="logo-content">
+                    <h2>Dashboard</h2>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('candidature') }}"><i class="fas fa-file-alt"></i><span>Candidature</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('cv') }}"><i class="fas fa-user-tie"></i><span>CV</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-briefcase"></i><span>Offres</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+<!-- Navbar -->
+<header class="navbar">
+    <div class="page-title">
+        <h2>Dashboard</h2>
+    </div>
+    <div class="user-wrapper">
+        <!-- Dark/Light Mode Toggle -->
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="icon-button">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+        
+        <!-- Notifications -->
+        <div class="notifications-dropdown">
+            <button class="icon-button">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="dropdown-content">
+                <div class="dropdown-header">
+                    <h4>Notifications</h4>
+                </div>
+                <a href="#"><i class="fas fa-envelope"></i> New message received</a>
+                <a href="#"><i class="fas fa-briefcase"></i> New job offer available</a>
+                <a href="#"><i class="fas fa-calendar"></i> Interview scheduled</a>
+            </div>
+        </div>
+        
+        <!-- Settings -->
+        <div class="settings-dropdown">
+            <button class="icon-button">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('settings') }}"><i class="fas fa-user-cog"></i> Account Settings</a>
+                <a href="#"><i class="fas fa-sliders-h"></i> Preferences</a>
+                <a href="#"><i class="fas fa-palette"></i> Appearance</a>
+            </div>
+        </div>
+        
+        <!-- Profile -->
+        <div class="profile-dropdown">
+            <div class="profile-info">
+                <img src="../projet tutor/images/img.png" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="dropdown-content">
+                <div class="dropdown-header">
+                    <h4>John Doe</h4>
+                    <small>Software Developer</small>
+                </div>
+                <a href="{{ url_for('profil') }}"><i class="fas fa-user"></i> View Profile</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="profile-section">
+    <div class="profile-card">
+      <img src="../projet tutor/images/img.png" alt="Profile Picture" class="profile-image">
+      <h2>John Doe</h2>
+      <p><i class="fas fa-envelope"></i> john.doe@example.com</p>
+      <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+      <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <button class="edit-btn"><a href="{{ url_for('settings') }}" style="text-decoration: none; color: white;">Edit Profile</a></button>
+    </div>
+  </section>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/profil.js') }}"></script>
+</body>
+</html>

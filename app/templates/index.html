@@ -1,0 +1,97 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DogFinance Recrutement</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">Job<span>Stage</span></div>
+    <nav class="navbar">
+      <a href="#about">À propos</a>
+      <a href="#">Entreprises</a>
+      <a href="#">Événements</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="btn-login">
+        <a href="{{ url_for('login') }}" class="btn-link">Get started</a>
+      </button>
+    </div>
+    <style>
+      .btn-login a.btn-link {
+        color: white;
+        text-decoration: none;
+      }
+      .btn-login a.btn-link:hover {
+        text-decoration: none;
+      }
+    </style>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Parcourez nos <strong>6 743 offres d'emplois</strong></h2>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>À propos de JobStage</h2>
+      <div class="container" style="padding-left: 100px; padding-right: 100px;">
+        <p>JobStage est une plateforme...</p>
+        <!-- ... contenu ... -->
+      </div>
+    </div>
+  </section>
+
+  <section id="companies" class="companies-section">
+    <div class="container">
+      <h2>Nos Entreprises Partenaires</h2>
+      <div class="company-logos">
+        <img src="{{ url_for('static', filename='images/img5.jpg') }}" alt="TechSoft" class="company-logo">
+        <img src="{{ url_for('static', filename='images/img6.jpg') }}" alt="DataVision" class="company-logo">
+        <img src="{{ url_for('static', filename='images/img5.jpg') }}" alt="AIWorks" class="company-logo">
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="events-section">
+    <div class="container">
+      <h2>Événements à venir</h2>
+      <div class="event">
+        <h3>Hackathon JobStage</h3>
+        <p>Lieu : Casablanca | Date : 15 Mai 2025</p>
+        <p>Rejoignez-nous pour un hackathon...</p>
+      </div>
+      <div class="event">
+        <h3>Forum de Recrutement</h3>
+        <p>Lieu : Rabat | Date : 5 Juin 2025</p>
+        <p>Un forum de recrutement...</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container-footer">
+      <div class="footer-left">
+        <h3>Job<span>Stage</span></h3>
+        <p>&copy; 2025 JobStage. Tous droits réservés.</p>
+      </div>
+      <div class="footer-right">
+        <ul>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Conditions</a></li>
+          <li><a href="#">Confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

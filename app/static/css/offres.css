@@ -1,0 +1,638 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f7f7;
+}
+
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.logo span {
+    color: #e74c3c;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+}
+
+.tagline {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.hero h1 span {
+    color: #7c3aed;
+}
+
+.subtitle {
+    color: #777;
+    margin: 10px 0 30px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    font-size: 1em;
+}
+.search-box button {
+    padding: 15px 20px;
+    background-color: #7c3aed;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+.search-icon {
+    font-size: 1.2em;
+}
+
+.filters {
+    margin-top: 20px;
+}
+.filters button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.filters button:hover {
+    background-color: #eee;
+}
+
+.offres-section {
+    padding: 40px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.offre-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Style for job card */
+.offre-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.offre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Button styling */
+.btn-postuler {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-postuler:hover {
+    background-color: #5b21b6;
+    transform: scale(1.05);
+}
+.date {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 8px;
+}
+
+/*this one*/
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #7c3aed;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.logo {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.sidebar-menu {
+    padding: 20px 0;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    padding: 15px 20px;
+    margin-bottom: 12px; /* Increased space between menu items */
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sidebar-menu li.active,
+.sidebar-menu li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.sidebar-menu i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+/* Collapsed state */
+.sidebar.collapsed .logo-content h2 {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-menu span {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-menu li {
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.sidebar.collapsed .sidebar-menu i {
+    margin-right: 0;
+}
+/* Main Content */
+.main-content {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    transition: margin-left 0.3s ease;
+}
+.main-content.expanded {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-title h2 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: auto;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.icon-button:hover {
+    color: #4e73df;
+}
+
+/* Notification badge */
+.notification-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e74a3b;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dropdowns */
+.profile-dropdown, .settings-dropdown, .notifications-dropdown, .theme-toggle {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+    padding: 0;
+    overflow: hidden;
+}
+
+.dropdown-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f9fc;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.profile-dropdown:hover .dropdown-content,
+.settings-dropdown:hover .dropdown-content,
+.notifications-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #1a202c;
+    color: #e2e8f0;
+}
+
+body.dark-mode .sidebar {
+    background: #2d3748;
+}
+
+body.dark-mode .navbar,
+body.dark-mode .card,
+body.dark-mode .chart {
+    background: #2d3748;
+    color: #e2e8f0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .page-title h2,
+body.dark-mode .card h2,
+body.dark-mode .chart h3 {
+    color: #e2e8f0;
+}
+
+body.dark-mode .card span {
+    color: #a0aec0;
+}
+
+body.dark-mode .icon-button {
+    color: #e2e8f0;
+}
+
+body.dark-mode .dropdown-content {
+    background: #2d3748;
+    border: 1px solid #4a5568;
+}
+
+body.dark-mode .dropdown-header {
+    background: #4a5568;
+    border-bottom: 1px solid #4a5568;
+}
+
+body.dark-mode .dropdown-content a {
+    color: #e2e8f0;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background: #4a5568;
+}
+
+body.dark-mode .icon-container {
+    background: rgba(255, 255, 255, 0.1);
+}
+/* Dashboard Content */
+main {
+    padding: 35px; /* Increased padding */
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Increased gap */
+    margin-bottom: 35px; /* Increased margin */
+}
+
+.card {
+    background: #fff;
+    padding: 25px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card h2 {
+    font-size: 2.2rem; /* Increased font size */
+    color: #333;
+    margin-bottom: 8px; /* Increased margin */
+}
+
+.card span {
+    color: #777;
+    font-size: 1rem;
+}
+
+.icon-container {
+    width: 60px; /* Increased size */
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(78, 115, 223, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container i {
+    font-size: 1.8rem; /* Increased font size */
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px; /* Increased gap */
+}
+
+.chart {
+    background: #fff;
+    padding: 25px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    height: 350px; /* Set fixed height for charts */
+}
+
+.chart h3 {
+    margin-bottom: 25px; /* Increased margin */
+    color: #333;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .sidebar .logo h2,
+    .sidebar-menu span {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+    
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sidebar-menu li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-wrapper input {
+        width: 150px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+}
+
+
+/* Modal Style */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 10px;
+}
+
+.modal-content input,
+.modal-content button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}

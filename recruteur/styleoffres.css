@@ -1,0 +1,335 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
+
+/* Container */
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: #fff;
+    height: 100vh;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.logo span {
+    color: red;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    padding-left: 10px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar nav ul li:hover {
+    background: #f05454;
+    color: white;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* Badge */
+.badge {
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Logout Button */
+.logout {
+    margin-top: 20px;
+    width: 100%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout:hover {
+    background: darkred;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent; /* Pas de background blanc comme avant */
+    padding: 10px 0;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+#date-today {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;  /* Font par défaut */
+    background: #f4f6f8;
+    color: #333;  /* Texte par défaut en gris foncé pour plus de lisibilité */
+}
+
+/* Header */
+header h1 {
+    font-size: 28px;  /* Plus gros pour attirer l'attention */
+    font-weight: 600; /* Un peu plus épais pour le titre */
+    color: #333;
+    letter-spacing: 1px; /* Espacement entre les lettres pour aérer */
+}
+
+/* Sidebar */
+.sidebar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.sidebar nav ul li {
+    font-size: 16px; /* Taille de texte confortable pour les éléments de menu */
+    font-weight: 500; /* Texte légèrement gras pour les éléments */
+    color: #555;  /* Texte plus clair pour les éléments de menu */
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Liens dans la sidebar */
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding-left: 10px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    color: white;
+}
+
+/* User Info */
+.user-info span {
+    font-weight: 600; /* Met l'admin en gras */
+    color: #333;
+}
+
+/* Logout Button */
+.logout {
+    font-weight: bold; /* Rendre le texte du bouton en gras */
+    font-size: 16px; /* Taille de texte confortable */
+    letter-spacing: 1px; /* Espacement entre les lettres */
+}
+
+/* Offres List */
+.offres-list .card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Tous les autres textes */
+p, li {
+    font-size: 14px;
+    color: #555; /* Texte plus clair pour les paragraphes */
+    line-height: 1.6;  /* Espacement entre les lignes pour plus de lisibilité */
+}
+/* Offres List */
+.offres-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;  /* Espacement entre les cartes */
+    justify-content: flex-start;  /* Alignement des éléments */
+}
+
+/* Carte des offres */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 20px); /* Trois cartes par ligne */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+/* Bouton pour créer une nouvelle offre */
+.create-offer-btn {
+    background-color: #4CAF50;  /* Couleur verte */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.create-offer-btn:hover {
+    background-color: #45a049;  /* Couleur un peu plus foncée au survol */
+}
+/* Modale */
+.modal {
+    display: none; /* Cacher la modale par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0); /* Fond sombre */
+    background-color: rgba(0, 0, 0, 0.4); /* Avec transparence */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#createOfferForm input, #createOfferForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#createOfferForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#createOfferForm button:hover {
+    background-color: #45a049;
+}
+/* Boutons */
+.offer-btn {
+    background-color: #f05454; /* Couleur rouge */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.offer-btn:hover {
+    background-color: darkred; /* Couleur au survol */
+}
+
+/* Styles de base pour les cartes */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Autres styles pour les cartes d'offres, etc. */
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+}

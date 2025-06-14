@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emploi du Temps des Entretiens</title>
+    <link rel="stylesheet" href="styled.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section class="container" id="offresContainer">
+        <!-- Sidebar gauche -->
+        <aside class="sidebar">
+            <h2 class="logo">Espace <span>Recruteur</span></h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Tableau de bord</a></li>
+                    <li><a href="offres.html">Gestion des offres</a></li>
+                    <li><a href="index.html">CV filtrés</a></li>
+                    <li><a href="planning.html">Planning des entretiens</a></li>
+                    <li><a href="analytiques.html">Analytiques</a></li>
+                    <li><a href="parametres.html">Paramètres</a></li>
+                    <li><a href="messages.html">Messages <span class="badge">3</span></a></li>
+                </ul>
+            </nav>
+            <button class="logout">Déconnexion</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header>
+                <h1>Emploi du Temps des Entretiens</h1>
+                <input type="date" id="date-today">
+                <div class="user-info">
+                    <span>Admin</span>
+                    <img src="images/user.png" alt="User Image">
+                </div>
+            </header>
+
+            <h2>Planning des Entretiens</h2>
+            
+            <!-- Tableau pour afficher l'emploi du temps -->
+            <div class="schedule-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Lundi</th>
+                            <th>Mardi</th>
+                            <th>Mercredi</th>
+                            <th>Jeudi</th>
+                            <th>Vendredi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+                        <!-- Les créneaux horaires s'affichent ici -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Barre latérale droite -->
+        <aside class="right-sidebar">
+            <h2>Prochaines étapes</h2>
+            <!-- Bouton pour planifier un entretien -->
+            <button id="planifierEntretien" class="btn">Planifier un Entretien</button>
+
+            <!-- Formulaire d'ajout d'entretien caché initialement -->
+            <div id="entretienForm" class="entretien-form" style="display:none;">
+                <label for="horaire">Heure de l'entretien :</label>
+                <input type="time" id="horaire" required>
+                <label for="jour">Jour de l'entretien :</label>
+                <select id="jour" required>
+                    <option value="lundi">Lundi</option>
+                    <option value="mardi">Mardi</option>
+                    <option value="mercredi">Mercredi</option>
+                    <option value="jeudi">Jeudi</option>
+                    <option value="vendredi">Vendredi</option>
+                </select>
+                <button id="submitEntretien" class="btn">Ajouter l'Entretien</button>
+            </div>
+        </aside>
+
+    </section>
+
+    <script src="emploiTemps.js"></script>
+</body>
+</html>

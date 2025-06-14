@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard Recruteur</title>
+    <link rel="stylesheet" href="styled.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2 class="logo">Espace <span>Recruteur</span></h2>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+                <li><a href="offres.html">Gestion des offres</a></li>
+                <li><a href="index.html">CV filtrés</a></li>
+                <li><a href="planning.html">Planning des entretiens</a></li>
+                <li><a href="analytiques.html">Analytiques</a></li>
+                <li><a href="parametres.html">Paramètres</a></li>
+                <li><a href="messages.html">Messages <span class="badge">3</span></a></li>
+            </ul>
+        </nav>
+        <button class="logout">Déconnexion</button>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Tableau de bord</h1>
+            <input type="date" id="date-today" />
+            <div class="user-info">
+                <span>Admin</span>
+                <img src="images/user.png" alt="User Image" />
+            </div>
+        </header>
+
+        <section class="cards">
+            <div class="card">
+                <i class="icon">📋</i>
+                <h3>Offres Actives</h3>
+                <p>12</p>
+                <small>Actuellement en ligne</small>
+                <div class="progress">
+                    <div style="width: 70%"></div>
+                </div>
+            </div>
+            <div class="card">
+                <i class="icon">👥</i>
+                <h3>Candidatures</h3>
+                <p>340</p>
+                <small>Reçues ce mois</small>
+                <div class="progress">
+                    <div style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="card">
+                <i class="icon">📅</i>
+                <h3>Entretiens Prévus</h3>
+                <p>8</p>
+                <small>Cette semaine</small>
+                <div class="progress">
+                    <div style="width: 50%"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-orders">
+            <h2>Entretiens à venir</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom Candidat</th>
+                        <th>État</th>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="candidatures-body">
+                    <!-- Les candidatures seront injectées ici -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <aside class="right-sidebar">
+        <section class="updates">
+            <h2>Alertes Nouveaux Profils</h2>
+            <div class="update">
+                <img src="images/user1.png" alt="user" />
+                <p><strong>Rania B.</strong> Correspond au poste Développeur Front-end</p>
+            </div>
+            <div class="update">
+                <img src="images/user1.png" alt="user" />
+                <p><strong>Youssef M.</strong> Correspond au poste Marketing Digital</p>
+            </div>
+        </section>
+
+        <section class="analytics">
+            <h2>Analytiques Rapides</h2>
+            <div class="analytics-card">
+                <p>Temps moyen de recrutement</p>
+                <small>30 jours</small>
+                <h3>30 j</h3>
+            </div>
+            <div class="analytics-card">
+                <p>Sources principales</p>
+                <small>LinkedIn, Site Carrière</small>
+                <h3>80%</h3>
+            </div>
+        </section>
+    </aside>
+</div>
+
+<script>
+    // Mettre la date du jour dans l'input date
+    const dateInput = document.getElementById('date-today');
+    dateInput.value = new Date().toISOString().split('T')[0];
+
+    // Charger les candidatures dynamiquement via fetch
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch('http://localhost:5000/candidatures')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erreur réseau: " + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const tableBody = document.getElementById("candidatures-body");
+                tableBody.innerHTML = "";
+
+                data.forEach(candidature => {
+                    const datePostule = new Date(candidature.date_postule);
+                    const dateFormatee = datePostule.toLocaleDateString('fr-FR');
+
+                    const row = `
+                        <tr>
+                            <td>${candidature.nom} ${candidature.prenom}</td>
+                            <td>${candidature.state_condidature || "En attente"}</td>
+                            <td>${dateFormatee}</td>
+                            <td>—</td>
+                            <td><a href="#">Voir Détails</a></td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(error => {
+                console.error("Erreur lors du chargement des candidatures :", error);
+                const tableBody = document.getElementById("candidatures-body");
+                tableBody.innerHTML = `<tr><td colspan="5" style="color:red;">Impossible de charger les candidatures.</td></tr>`;
+            });
+    });
+</script>
+
+</body>
+</html>

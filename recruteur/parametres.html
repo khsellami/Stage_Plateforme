@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paramètres</title>
+  <link rel="stylesheet" href="parametres.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Espace <span>Recruteur</span></div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Tableau de bord</a></li>
+          <li><a href="offres.html">Gestion des offres</a></li>
+          <li><a href="index.html">CV filtrés</a></li>
+          <li><a href="planning.html">Planning des entretiens</a></li>
+          <li><a href="analytiques.html">Analytiques</a></li>
+          <li><a class="active" href="parametres.html">Paramètres</a></li>
+          <li><a href="messages.html">Messages</a></li>
+        </ul>
+      </nav>
+      <button class="logout">Déconnexion</button>
+    </aside>
+    <main class="main-content">
+      <h1>Paramètres</h1>
+
+      <!-- Paramètres utilisateur -->
+      <section>
+        <h2>Paramètres utilisateur</h2>
+        <label>Nom :
+          <input type="text" placeholder="Nom complet" />
+        </label>
+        <label>Email :
+          <input type="email" placeholder="Votre email" />
+        </label>
+        <label>Nouveau mot de passe :
+          <input type="password" placeholder="Nouveau mot de passe" />
+        </label>
+        <label>Confirmer le mot de passe :
+          <input type="password" placeholder="Confirmer le mot de passe" />
+        </label>
+        <label>Photo de profil :
+          <input type="file" accept="image/*" />
+        </label>
+        <label>Langue :
+          <select>
+            <option>Français</option>
+            <option>Anglais</option>
+            <option>Espagnol</option>
+          </select>
+        </label>
+        <button>Enregistrer</button>
+      </section>
+
+      <!-- Paramètres de notifications -->
+      <section>
+        <h2>Paramètres de notifications</h2>
+        <label><input type="checkbox"> Nouvelle candidature</label><br>
+        <label><input type="checkbox"> Candidature filtrée</label><br>
+        <label><input type="checkbox"> Entretien à venir</label><br>
+        <label><input type="checkbox"> Notifications par email</label><br>
+        <label><input type="checkbox"> Notifications par interface</label><br>
+        <button>Enregistrer les paramètres</button>
+      </section>
+
+      <!-- Historique de modification des données -->
+      <section>
+        <h2>Historique des modifications</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>06/05/2025</td>
+              <td>Modifié l’offre "Développeur Python"</td>
+            </tr>
+            <tr>
+              <td>05/05/2025</td>
+              <td>Ajouté un entretien à 14h</td>
+            </tr>
+            <tr>
+              <td>04/05/2025</td>
+              <td>Filtré les CV (React.js + Bac+5)</td>
+            </tr>
+          </tbody>
+        </table>
+        <button>Exporter l'historique (CSV)</button>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

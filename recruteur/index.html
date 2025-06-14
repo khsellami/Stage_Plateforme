@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Recruteur</title>
+    <link rel="stylesheet" href="styled.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2 class="logo">Espace <span>Recruteur</span></h2>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Tableau de bord</a></li>
+                <li><a href="offres.html">Gestion des offres</a></li>
+                <li><a href="index.html">CV filtrés</a></li>
+                <li><a href="planning.html">Planning des entretiens</a></li>
+                <li><a href="analytiques.html">Analytiques</a></li>
+                <li><a href="parametres.html">Paramètres</a></li>
+                <li><a href="messages.html">Messages <span class="badge">3</span></a></li>
+            </ul>
+            
+        </nav>
+        <button class="logout">Déconnexion</button>
+    </aside>
+    <main class="main-content">
+        <header>
+            <h1>Filtrage de cv</h1>
+            <input type="date" id="date-today">
+            <div class="user-info">
+                <span>Admin</span>
+                <img src="images/user.png" alt="User Image">
+            </div>
+
+        </header>
+
+    </main>
+    
+      <aside class="right-sidebar">
+        <h2>Importer un CV</h2>
+        <form id="cv-form" enctype="multipart/form-data">
+            <input type="file" id="cv-file" accept=".pdf,.doc,.docx" required>
+            <button type="submit" class="btn">Analyser et Noter</button>
+        </form>
+    
+        <div id="resultat" style="margin-top:20px;">
+            <h3>Résultat :</h3>
+            <p id="score">Aucun CV analysé</p>
+        </div>
+    </aside>
+    
+</div>
+<script>
+    const dateInput = document.getElementById('date-today');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+</script>
+<script src="scriptfiltre.js"></script>
+</body>
+</html>

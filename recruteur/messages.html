@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Messages Automatiques</title>
+  <link rel="stylesheet" href="messages.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Espace <span>Recruteur</span></div>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Tableau de bord</a></li>
+          <li><a href="offres.html">Gestion des offres</a></li>
+          <li><a href="index.html">CV filtrés</a></li>
+          <li><a href="planning.html">Planning des entretiens</a></li>
+          <li><a href="analytiques.html">Analytiques</a></li>
+          <li><a href="parametres.html">Paramètres</a></li>
+          <li><a class="active" href="messages.html">Messages</a></li>
+        </ul>
+      </nav>
+      <button class="logout">Déconnexion</button>
+    </aside>
+
+    <main class="main-content">
+      <h1>Créer un message automatique</h1>
+
+      <section class="message-form">
+        <h2>Confirmation de candidature</h2>
+        <form id="confirm-candidate-form">
+          <label for="candidate-name">Nom du candidat :</label>
+          <input type="text" id="candidate-name" placeholder="Nom du candidat" required>
+
+          <label for="job-title">Poste :</label>
+          <input type="text" id="job-title" placeholder="Poste à pourvoir" required>
+
+          <button type="submit">Créer le message</button>
+        </form>
+
+        <div id="confirm-message" class="generated-message"></div>
+      </section>
+
+      <section class="message-form">
+        <h2>Planification d'entretien</h2>
+        <form id="interview-schedule-form">
+          <label for="candidate-name-interview">Nom du candidat :</label>
+          <input type="text" id="candidate-name-interview" placeholder="Nom du candidat" required>
+
+          <label for="job-title-interview">Poste :</label>
+          <input type="text" id="job-title-interview" placeholder="Poste à pourvoir" required>
+
+          <label for="interview-date">Date de l'entretien :</label>
+          <input type="date" id="interview-date" required>
+
+          <button type="submit">Créer le message</button>
+        </form>
+
+        <div id="interview-message" class="generated-message"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Fonction pour générer le message de confirmation de candidature
+    document.getElementById("confirm-candidate-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const candidateName = document.getElementById("candidate-name").value;
+      const jobTitle = document.getElementById("job-title").value;
+
+      const message = `
+        Bonjour ${candidateName},
+        
+        Nous avons bien reçu votre candidature pour le poste de ${jobTitle}. 
+        Notre équipe de recrutement l'examinera et vous contactera si votre profil correspond à nos besoins.
+        
+        Cordialement,
+        L’équipe de recrutement
+      `;
+
+      document.getElementById("confirm-message").textContent = message;
+    });
+
+    // Fonction pour générer le message de planification d'entretien
+    document.getElementById("interview-schedule-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const candidateName = document.getElementById("candidate-name-interview").value;
+      const jobTitle = document.getElementById("job-title-interview").value;
+      const interviewDate = document.getElementById("interview-date").value;
+
+      const message = `
+        Bonjour ${candidateName},
+        
+        Nous avons le plaisir de vous inviter à un entretien pour le poste de ${jobTitle} 
+        le ${interviewDate} à [Heure]. L'entretien aura lieu [Lieu ou format de l'entretien].
+        
+        Merci de confirmer votre présence en répondant à ce message.
+        
+        Cordialement,
+        L’équipe de recrutement
+      `;
+
+      document.getElementById("interview-message").textContent = message;
+    });
+  </script>
+</body>
+</html>

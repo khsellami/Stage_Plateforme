@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres de Stage</title>
+    <link rel="stylesheet" href="styleoffres.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="container" id="offresContainer">  
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2 class="logo">Espace <span>Recruteur</span></h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Tableau de bord</a></li>
+                    <li><a href="offres.html">Gestion des offres</a></li>
+                    <li><a href="index.html">CV filtrés</a></li>
+                    <li><a href="planning.html">Planning des entretiens</a></li>
+                    <li><a href="analytiques.html">Analytiques</a></li>
+                    <li><a href="parametres.html">Paramètres</a></li>
+                    <li><a href="messages.html">Messages <span class="badge">3</span></a></li>
+                </ul>
+            </nav>
+            <button class="logout">Déconnexion</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Header déplacé ici -->
+            <header>
+                <h1>Gestion des offres</h1>
+                <input type="date" id="date-today">
+                <div class="user-info">
+                    <span>Admin</span>
+                    <img src="images/user.png" alt="User Image">
+                </div>
+            </header>
+
+            <h2>Liste des Offres de Stage</h2>
+            
+            <!-- Bouton pour créer une nouvelle offre -->
+            <button class="create-offer-btn">Créer une nouvelle offre</button>
+
+            <div class="offres-list" id="offresList">
+                <!-- Les offres s'afficheront ici dynamiquement -->
+            </div>
+        </main>
+
+    </section>
+
+    <!-- Modale de création d'offre -->
+    <div class="modal" id="createOfferModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h3>Créer une nouvelle offre de stage</h3>
+            <form id="createOfferForm">
+                <label for="offer-title">Titre de l'offre :</label>
+                <input type="text" id="offer-title" name="offer-title" required>
+
+                <label for="offer-description">Description :</label>
+                <textarea id="offer-description" name="offer-description" required></textarea>
+
+                <label for="offer-location">Lieu :</label>
+                <input type="text" id="offer-location" name="offer-location" required>
+
+                <label for="offer-duration">Durée :</label>
+                <input type="text" id="offer-duration" name="offer-duration" required>
+
+                <button type="submit">Ajouter l'offre</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="offres.js"></script>
+
+    <!-- Script pour gérer la modale et ajouter l'offre -->
+    
+
+</body>
+</html>

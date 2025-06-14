@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f7f7;
+}
+
+/* Navigation */
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.logo span {
+    color: #e74c3c;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+}
+.tagline {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.hero h1 span {
+    color: #7c3aed;
+}
+.subtitle {
+    color: #777;
+    margin: 10px 0 30px;
+}
+
+/* Barre de recherche */
+.search-box {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+.search-box input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px 0 0 25px;
+    font-size: 1em;
+}
+.search-box button {
+    padding: 15px 20px;
+    background-color: #7c3aed;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+.search-icon {
+    font-size: 1.2em;
+}
+
+/* Filtres */
+.filters {
+    margin-top: 20px;
+}
+.filters button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.filters button:hover {
+    background-color: #eee;
+}
+
+/* Section Offres + Sidebar */
+.offres-section {
+    display: flex; /* <- Flexbox pour aligner sidebar + offres */
+    padding: 40px;
+}
+
+.sidebar {
+    width: 220px;
+    background: #fff;
+    height: 100vh;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0; /* Sidebar ne rapetisse pas */
+}
+
+.offres-list {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar nav ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+.sidebar nav ul li:hover {
+    background: #f05454;
+    color: white;
+}
+.badge {
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+.logout {
+    margin-top: 20px;
+    width: 100%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Conteneur des offres */
+.offres-container {
+    flex: 1;
+    padding: 40px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Carte d'offre */
+.offre-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.offre-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.btn-postuler {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-postuler:hover {
+    background-color: #5b21b6;
+    transform: scale(1.05);
+}
+.date {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 8px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}

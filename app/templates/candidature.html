@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidature page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/candidature.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <div class="logo-content">
+                    <h2>Candidature</h2>
+                </div>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="active">
+                        <a a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('candidature') }}"><i class="fas fa-file-alt"></i><span>Candidature</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('cv') }}"><i class="fas fa-user-tie"></i><span>CV</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('offres') }}"><i class="fas fa-briefcase"></i><span>Offres</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+<!-- Navbar -->
+<header class="navbar">
+    <div class="page-title">
+        <h2>Dashboard</h2>
+    </div>
+    <div class="user-wrapper">
+        <!-- Dark/Light Mode Toggle -->
+        <div class="theme-toggle">
+            <button id="theme-toggle" class="icon-button">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+        
+        <!-- Notifications -->
+        <div class="notifications-dropdown">
+            <button class="icon-button">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="dropdown-content">
+                <div class="dropdown-header">
+                    <h4>Notifications</h4>
+                </div>
+                <a href="#"><i class="fas fa-envelope"></i> New message received</a>
+                <a href="#"><i class="fas fa-briefcase"></i> New job offer available</a>
+                <a href="#"><i class="fas fa-calendar"></i> Interview scheduled</a>
+            </div>
+        </div>
+        
+        <!-- Settings -->
+        <div class="settings-dropdown">
+            <button class="icon-button">
+                <i class="fas fa-cog"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('settings') }}"><i class="fas fa-user-cog"></i> Account Settings</a>
+                <a href="#"><i class="fas fa-sliders-h"></i> Preferences</a>
+                <a href="#"><i class="fas fa-palette"></i> Appearance</a>
+            </div>
+        </div>
+        
+        <!-- Profile -->
+        <div class="profile-dropdown">
+            <div class="profile-info">
+                <img src="{{ url_for('static', filename='images/img.png') }}" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="dropdown-content">
+                <div class="dropdown-header">
+                    <h4>John Doe</h4>
+                    <small>Software Developer</small>
+                </div>
+                <a href="#"><i class="fas fa-user"></i> View Profile</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <section class="status-cards">
+            <div class="card">
+                <h3>Applications Sent</h3>
+                <p>15</p>
+            </div>
+            <div class="card">
+                <h3>In Review</h3>
+                <p>6</p>
+            </div>
+            <div class="card">
+                <h3>Interviews</h3>
+                <p>3</p>
+            </div>
+            <div class="card">
+                <h3>Offers</h3>
+                <p>1</p>
+            </div>
+        </section>
+        <section class="table-section">
+            <h3>Candidature Details</h3>
+            <table class="candidature-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Date Applied</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google</td>
+                        <td>Frontend Developer</td>
+                        <td>2025-04-01</td>
+                        <td><span class="badge in-review">In Review</span></td>
+                    </tr>
+                    <tr>
+                        <td>Amazon</td>
+                        <td>Backend Engineer</td>
+                        <td>2025-03-28</td>
+                        <td><span class="badge interview">Interview</span></td>
+                    </tr>
+                    <tr>
+                        <td>Meta</td>
+                        <td>Full Stack Developer</td>
+                        <td>2025-03-25</td>
+                        <td><span class="badge offer">Offer</span></td>
+                    </tr>
+                    <tr>
+                        <td>Netflix</td>
+                        <td>DevOps Engineer</td>
+                        <td>2025-03-20</td>
+                        <td><span class="badge sent">Sent</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        
+    </main>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/candidature.js') }}"></script>
+</body>
+</html>

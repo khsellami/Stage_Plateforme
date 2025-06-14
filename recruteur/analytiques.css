@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 220px;
+    background: #fff;
+    height: 100vh;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .logo span {
+    color: red;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sidebar nav ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    padding-left: 10px;
+    border-radius: 8px;
+  }
+  
+  .sidebar nav ul li:hover {
+    background: #f05454;
+    color: white;
+  }
+  
+  .sidebar nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .badge {
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  .logout {
+    margin-top: 20px;
+    width: 100%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Main content */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  .export-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .export-btn:hover {
+    background: #0056b3;
+  }
+  
+
+
+  
+  .chart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  }

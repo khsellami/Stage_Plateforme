@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    background: #fff;
+    height: 100vh;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.logo span {
+    color: red;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s; /* Smooth animation */
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+/* Effet au survol */
+.sidebar nav ul li:hover {
+    background: #f05454; /* Couleur de fond au hover */
+    color: white;        /* Texte en blanc au hover */
+}
+
+
+.badge {
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.logout {
+    margin-top: 20px;
+    width: 100%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-info img {
+    width: 30px;  /* Très petite largeur */
+    height: 30px; /* Très petite hauteur */
+    border-radius: 50%; /* Optionnel : rend l'image ronde */
+    object-fit: cover;  /* Garde bien la forme même si l'image n'est pas carrée */
+}
+
+.update img {
+    width: 20px;  /* Très petite largeur */
+    height: 20px; /* Très petite hauteur */
+    border-radius: 50%; /* Optionnel : rend l'image ronde */
+    object-fit: cover;  /* Garde bien la forme même si l'image n'est pas carrée */
+
+}
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.progress {
+    height: 8px;
+    background: #eee;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: green;
+}
+
+.recent-orders {
+    margin-top: 40px;
+}
+
+.recent-orders table {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.recent-orders th, .recent-orders td {
+    padding: 10px;
+    text-align: left;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.right-sidebar {
+    width: 300px;
+    background: #fff;
+    height: 100vh;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.update {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.analytics {
+    margin-top: 40px;
+}
+
+.analytics-card {
+    background: #eee;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+/* pour le plannning des entretiens 
+
+.
+.
+*.
+.*/
+/* Style général pour le tableau de l'emploi du temps */
+.schedule-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.schedule-table td {
+    background-color: #fff;
+}
+
+/* Pour les créneaux d'entretien */
+.schedule-table .interview {
+    background-color: #ffeb3b; /* Jaune pour entretien */
+    color: #333;
+    font-weight: bold;
+}
+
+/* Pour les créneaux libres */
+.schedule-table .available {
+    background-color: #c8e6c9; /* Vert pour créneau libre */
+    color: #333;
+    font-weight: normal;
+}
+
+.schedule-table td.empty {
+    background-color: #f0f0f0; /* Gris clair pour case vide */
+}
+/* Style général du bouton */
+.btn {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Style du formulaire d'ajout d'entretien */
+.entretien-form {
+    margin-top: 20px;
+}
+
+.entretien-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.entretien-form input,
+.entretien-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
