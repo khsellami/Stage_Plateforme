@@ -53,11 +53,11 @@ This platform streamlines the recruitment process, allowing candidates to apply 
 
 ### Contributors
 
-- khsellami
-- zineb 
-- hrebbouh
-- khzouhair
-- NLAMGHARI
+- [khsellami](https://github.com/khsellami)
+- [zineb](https://github.com/zineb)
+- [hrebbouh](https://github.com/hrebbouh)
+- [khzouhair](https://github.com/khzouhair)
+- [NLAMGHARI](https://github.com/NLAMGHARI)
 
 Add your name below if you contributed to this project!
 
@@ -66,6 +66,3 @@ To contribute:
 2. Create a new branch (`git checkout -b feature-branch`)
 3. Commit your changes
 4. Open a pull request
-
-## License
-Specify your license here (e.g., MIT, GPL, etc.)
